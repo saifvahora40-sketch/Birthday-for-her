@@ -1,0 +1,170 @@
+export default function RomanticBirthdayWebsite() { const photos = [ "file_000000005f6871fa9be6236150c981fd", "file_00000000ad687206be63f62cd03bdbdb", "file_00000000731c71fabb0c1c7c3e0b8d50", "file_00000000f3cc71faa092b8b4e2c759c8", "file_00000000d9047206b1e8fd0c439cbd61", "file_00000000ee3471fabde8df2d13ff48e0", "file_0000000080d0720798f54a8e866bbb3b" ];
+
+return ( <div className="min-h-screen bg-gradient-to-b from-[#120018] via-[#2a123d] to-black text-white overflow-hidden"> {/* HERO SECTION */} <section className="relative h-screen flex flex-col items-center justify-center px-6 text-center"> <div className="absolute inset-0 bg-cover bg-center opacity-30 blur-[2px]" style={{ backgroundImage: url(${photos[0]}), }} />
+
+<div className="relative z-10 max-w-4xl">
+      <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 bg-gradient-to-r from-pink-300 to-purple-300 bg-clip-text text-transparent">
+        Happy Birthday, My Love ❤️
+      </h1>
+
+      <p className="text-lg md:text-2xl text-pink-100 mb-10">
+        Every version of me loved you.
+      </p>
+
+      <button className="px-8 py-4 rounded-full bg-pink-400/20 border border-pink-300 backdrop-blur-md hover:scale-105 transition duration-300 shadow-2xl shadow-pink-500/20">
+        Enter Our World ✨
+      </button>
+    </div>
+
+    {/* Floating Hearts */}
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {[...Array(20)].map((_, i) => (
+        <div
+          key={i}
+          className="absolute text-pink-400 animate-pulse"
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            fontSize: `${Math.random() * 20 + 10}px`,
+          }}
+        >
+          ❤️
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* OUR STORY */}
+  <section className="py-24 px-6 max-w-6xl mx-auto">
+    <h2 className="text-4xl md:text-5xl font-bold text-center mb-20 text-pink-200">
+      Our Story
+    </h2>
+
+    <div className="grid md:grid-cols-2 gap-10 items-center mb-20">
+      <img
+        src={photos[1]}
+        alt="memory"
+        className="rounded-3xl shadow-2xl shadow-pink-500/20"
+      />
+
+      <div>
+        <p className="text-2xl leading-relaxed text-pink-100">
+          Somewhere between random conversations and stolen glances,
+          you became my favorite feeling.
+        </p>
+      </div>
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <p className="text-2xl leading-relaxed text-pink-100">
+          You made ordinary moments feel magical.
+        </p>
+      </div>
+
+      <img
+        src={photos[5]}
+        alt="memory"
+        className="rounded-3xl shadow-2xl shadow-purple-500/20"
+      />
+    </div>
+  </section>
+
+  {/* MEMORY GALLERY */}
+  <section className="py-24 px-6 bg-white/5 backdrop-blur-sm">
+    <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-purple-200">
+      Little Moments, Big Memories
+    </h2>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {photos.map((photo, index) => (
+        <div
+          key={index}
+          className="bg-white/10 p-4 rounded-3xl rotate-[-2deg] hover:rotate-0 hover:scale-105 transition duration-500 shadow-xl"
+        >
+          <img
+            src={photo}
+            alt={`memory-${index}`}
+            className="rounded-2xl mb-4"
+          />
+
+          <p className="text-pink-100 text-center italic">
+            {index % 2 === 0
+              ? "The prettiest view I’ve ever seen ❤️"
+              : "Us, in our little universe ✨"}
+          </p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* REASONS */}
+  <section className="py-24 px-6 max-w-6xl mx-auto">
+    <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-pink-200">
+      Reasons I Love You
+    </h2>
+
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {[
+        "Your smile",
+        "Your eyes",
+        "Your softness",
+        "The way you look at me",
+      ].map((item, index) => (
+        <div
+          key={index}
+          className="bg-gradient-to-br from-pink-400/20 to-purple-400/20 border border-pink-300/20 rounded-3xl p-8 text-center hover:scale-105 transition duration-300"
+        >
+          <div className="text-4xl mb-4">💖</div>
+          <h3 className="text-xl font-semibold">{item}</h3>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* LOVE LETTER */}
+  <section className="py-24 px-6 bg-gradient-to-r from-pink-500/10 to-purple-500/10">
+    <div className="max-w-4xl mx-auto text-center bg-white/10 backdrop-blur-lg rounded-[40px] p-10 border border-white/10 shadow-2xl">
+      <h2 className="text-4xl md:text-5xl font-bold mb-10 text-pink-200">
+        A Letter For You 💌
+      </h2>
+
+      <p className="text-xl leading-loose text-pink-50">
+        You were never just someone I loved.
+        <br />
+        You became home.
+        <br />
+        <br />
+        Thank you for every smile, every laugh, every little moment that
+        made life feel softer.
+        <br />
+        <br />
+        In every lifetime, I’d still choose you.
+      </p>
+    </div>
+  </section>
+
+  {/* FINAL SECTION */}
+  <section className="relative py-32 px-6 text-center overflow-hidden">
+    <div
+      className="absolute inset-0 bg-cover bg-center opacity-20"
+      style={{
+        backgroundImage: `url(${photos[6]})`,
+      }}
+    />
+
+    <div className="relative z-10 max-w-4xl mx-auto">
+      <h2 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-pink-200 to-purple-200 bg-clip-text text-transparent">
+        Happy Birthday ❤️
+      </h2>
+
+      <p className="text-2xl text-pink-100 mb-10">
+        Thank you for existing.
+      </p>
+
+      <div className="text-6xl animate-bounce">🎂</div>
+    </div>
+  </section>
+</div>
+
+); }
